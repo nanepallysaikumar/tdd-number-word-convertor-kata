@@ -30,3 +30,11 @@ test("It should show message if user provides characters instead of digits in in
     screen.getByText("Please enter only digits.")
   ).toBeInTheDocument();
 });
+
+test("It should convert number 0 to word Zero.", () => {
+  const { input } = setup();
+  fireEvent.change(input, { target: { value: "0" } });
+  expect(
+    screen.getByText("Zero.")
+  ).toBeInTheDocument();
+});

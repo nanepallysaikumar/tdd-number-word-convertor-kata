@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MAX_NUM_LENGTH } from "./constants/applicationConstants";
 import { isNumberOverLimit, isNumeric } from "./utility/validator";
+import { numberToWordConvertor } from "./utility/numberToWordConvertor";
 
 function App() {
   const [displayText, setDisplayText] = useState("");
@@ -9,10 +10,11 @@ function App() {
 
     if (isNumberOverLimit(inputValue, MAX_NUM_LENGTH)) {
       setDisplayText("Please enter only digits less than or equal to 5.");
-    }
-
-    if (!isNumeric(inputValue)) {
+    } else if (!isNumeric(inputValue)) {
       setDisplayText("Please enter only digits.");
+    } else {
+      const numberToWordText = numberToWordConvertor(inputValue);
+      setDisplayText(numberToWordText);
     }
   }
 
