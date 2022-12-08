@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MAX_NUM_LENGTH } from "./constants/applicationConstants";
-import { isNumberOverLimit } from "./utility/validator";
+import { isNumberOverLimit, isNumeric } from "./utility/validator";
 
 function App() {
   const [displayText, setDisplayText] = useState("");
@@ -9,6 +9,10 @@ function App() {
 
     if (isNumberOverLimit(inputValue, MAX_NUM_LENGTH)) {
       setDisplayText("Please enter only digits less than or equal to 5.");
+    }
+
+    if (!isNumeric(inputValue)) {
+      setDisplayText("Please enter only digits.");
     }
   }
 
