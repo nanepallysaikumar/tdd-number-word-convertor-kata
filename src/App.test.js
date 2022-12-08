@@ -38,3 +38,12 @@ test("It should convert number 0 to word Zero.", () => {
     screen.getByText("Zero.")
   ).toBeInTheDocument();
 });
+
+test("It should convert number 1 to word One.", () => {
+  const { input } = setup();
+  fireEvent.change(input, { target: { value: "1" } });
+  expect(
+    screen.getByText("One")
+  ).toBeInTheDocument();
+});
+
