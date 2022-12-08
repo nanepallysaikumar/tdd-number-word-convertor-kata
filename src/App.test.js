@@ -63,3 +63,12 @@ test("It should convert number 305 to word.", () => {
   ).toBeInTheDocument();
 });
 
+test("It should convert number 4000 to word.", () => {
+  const { input } = setup();
+  fireEvent.change(input, { target: { value: "4000" } });
+  expect(
+    screen.getByText("Four Thousand")
+  ).toBeInTheDocument();
+});
+
+
