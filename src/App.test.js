@@ -55,3 +55,11 @@ test("It should convert number 22 to word.", () => {
   ).toBeInTheDocument();
 });
 
+test("It should convert number 305 to word.", () => {
+  const { input } = setup();
+  fireEvent.change(input, { target: { value: "305" } });
+  expect(
+    screen.getByText("Three hundred and Five")
+  ).toBeInTheDocument();
+});
+
