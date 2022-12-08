@@ -23,4 +23,17 @@ const ones = [
   "Nineteen",
 ];
 
-export { MAX_NUM_LENGTH, ones };
+const tens = [
+  "",
+  "Ten",
+  "Twenty",
+  "Thirty",
+  "Forty",
+  "Fifty",
+  "Sixty",
+  "Seventy",
+  "Eighty",
+  "Ninety",
+];
+
+export { MAX_NUM_LENGTH, ones, tens };
