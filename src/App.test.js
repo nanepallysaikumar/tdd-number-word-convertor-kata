@@ -1,6 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render } from "@testing-library/react";
+import App from "./App";
 
-test('', () => {
-  render(<App />);
+const setup = () => {
+  const utils = render(<App />);
+  const input = utils.getByLabelText("number-input");
+  return {
+    input,
+    ...utils,
+  };
+};
+
+test("It should have input box rendered on the screen.", () => {
+  const { input } = setup();
+  expect(input).toBeVisible();
 });
